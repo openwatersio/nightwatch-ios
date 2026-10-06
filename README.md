@@ -71,8 +71,8 @@ This is our provisional red preset. Research into hue, intensity, and night-visi
 
 | Find Color Tint, then scroll down for the sliders |
 | --- |
-| ![iPad Color Filters settings with Color Tint selected; Intensity is low and Hue is below the bottom edge](docs/assets/color-filters-ipad.jpg) |
-| Reference for finding the controls. The screenshot's low Intensity is not the target setting. |
+| <img src="docs/assets/color-filters-iphone-long.png" alt="Combined iPhone Color Filters guide showing Color Tint selected and Intensity and Hue sliders at the right end" width="320"> |
+| AI-assisted composite of two captures, showing the full setup in one view. On the phone, scroll down to reach both sliders. Original captures: [top](docs/assets/color-filters-iphone-top.jpg) and [sliders](docs/assets/color-filters-iphone-sliders.jpg). |
 
 The shortcut only changes whether Color Filters is enabled. Hue, intensity, and filter type are configured in Settings. If you use a different accessibility filter every day, this setup changes that saved selection; Nightwatch Off disables the filter rather than restoring your previous selection. [Apple's Color Filters guide](https://support.apple.com/guide/iphone/iph3e2e1fb0/ios).
 

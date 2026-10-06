@@ -2,6 +2,8 @@
 
 Nightwatch is an instructions-only project. Its deliverable is a repeatable setup using Color Filters, Shortcuts, and Focus. A website can present this guide once the full setup is verified. No app purchase, app installation, or subscription is required by this guide.
 
+For implementation details, see [Technical findings and API limits](technical-findings.md). The [ideal app experience](ideal-app-experience.md) preserves the product intent.
+
 ## Device observations
 
 - A custom Nightwatch Focus and a manually created Focus-triggered Color Filters toggle worked for the project owner. The Off automation was not yet created at the time of that report.

@@ -12,6 +12,12 @@ The intended result:
 
 The manual Focus-triggered toggle has worked in device testing. The separate On and Off automation recipe below still needs a complete device test, especially the Off path. See [findings and remaining checks](docs/findings.md).
 
+## Project documentation
+
+- [Technical findings and API limits](docs/technical-findings.md): device evidence, reusable code patterns, and unresolved questions for Apple.
+- [The ideal Nightwatch app](docs/ideal-app-experience.md): the intended paid app, setup, everyday controls, and repair experience.
+- [Findings and remaining checks](docs/findings.md): verification still needed for the instructions.
+
 ## 1. Create the shortcuts
 
 Open Shortcuts and create a shortcut named **Nightwatch On**. Search for the **Set Color Filters** action, add it, and set it to **Turn Color Filters On**. Save it.

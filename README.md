@@ -20,11 +20,31 @@ The manual Focus-triggered toggle has worked in device testing. The separate On 
 
 ## 1. Create the shortcuts
 
-Open Shortcuts and create a shortcut named **Nightwatch On**. Search for the **Set Color Filters** action, add it, and set it to **Turn Color Filters On**. Save it.
+If Nightwatch On and Nightwatch Off already exist, skip to [saving the red tint](#2-save-the-red-tint), or [connecting Focus](#4-connect-focus-to-the-shortcuts) if your tint is already configured.
 
-Duplicate it, rename the copy **Nightwatch Off**, and change the action to **Turn Color Filters Off**.
+In Shortcuts, open the description-based builder and paste each block separately. Keep these exact names so the automations can reference them.
 
-Optionally make **Nightwatch Toggle**, with the action set to **Toggle Color Filters**. This is useful for a quick manual override. Keep it out of the Focus automations: toggling can turn the filter off when you wanted it on.
+### Nightwatch On
+
+```text
+Create a shortcut named exactly "Nightwatch On". Add one Set Color Filters action configured to Turn On. Use the existing color filter selected in Accessibility settings. Do not use Toggle, change brightness, add an automation, show an alert, or open another app.
+```
+
+### Nightwatch Off
+
+```text
+Create a shortcut named exactly "Nightwatch Off". Add one Set Color Filters action configured to Turn Off. Keep the saved filter type, hue, and intensity unchanged. Do not use Toggle, change brightness, add an automation, show an alert, or open another app.
+```
+
+### Nightwatch Toggle, optional
+
+```text
+Create a shortcut named exactly "Nightwatch Toggle". Add one Set Color Filters action configured to Toggle. Use the existing color filter selected in Accessibility settings. Do not change brightness, add an automation, show an alert, or open another app.
+```
+
+Toggle is a manual override. Keep it out of the Focus automations, where it could turn the filter off when you wanted it on.
+
+Inspect each generated shortcut against this table. If the builder is unavailable, create a new shortcut, search for **Set Color Filters**, configure its action as shown, and save it with the exact name. There are no shared install links in this repository yet.
 
 | Shortcut | Entire action list |
 | --- | --- |
@@ -33,16 +53,6 @@ Optionally make **Nightwatch Toggle**, with the action set to **Toggle Color Fil
 | Nightwatch Toggle, optional | Toggle Color Filters |
 
 Run Nightwatch On. A device with the default filter may become grayscale. That shows the action is working; the next step changes the saved filter to red. If you already have a different filter selected, that filter will appear instead.
-
-If your Shortcuts app offers a description-based builder, you can paste this text, changing the name and state for each shortcut:
-
-> Create a shortcut named Nightwatch On with one action: Set Color Filters to On. Keep the existing filter selection. Do not use Toggle. Do not add alerts or open another app.
-
-For the optional toggle, use:
-
-> Create a shortcut named Nightwatch Toggle with one action: Toggle Color Filters. Keep the existing filter selection. Do not add alerts or open another app.
-
-Inspect the generated actions against the table. The builder is optional; the manual recipe does not require Siri or Apple Intelligence. There are no shared install links in this repository yet.
 
 ## 2. Save the red tint
 
@@ -71,7 +81,21 @@ Focus will be the everyday control for the tint, your chosen screens, and your s
 
 Personal automations listen for Focus changes. The shortcuts themselves do not watch anything in the background.
 
-In **Shortcuts → Automation → +**, create these two personal automations. Select Nightwatch in the Focus triggers; labels vary slightly by iOS version.
+These prompts assume that the Nightwatch Focus and the shortcuts named exactly **Nightwatch On** and **Nightwatch Off** already exist. Paste each block separately into the automation description builder.
+
+### When Nightwatch turns on
+
+```text
+Create a personal automation for the existing Focus named "Nightwatch". Trigger it only When Turning On, not When Turning Off. Set it to Run Immediately without asking for confirmation. Add one Run Shortcut action that runs my existing shortcut named exactly "Nightwatch On". Do not create another shortcut, toggle Color Filters, change the Focus, or add other actions.
+```
+
+### When Nightwatch turns off
+
+```text
+Create a personal automation for the existing Focus named "Nightwatch". Trigger it only When Turning Off, not When Turning On. Set it to Run Immediately without asking for confirmation. Add one Run Shortcut action that runs my existing shortcut named exactly "Nightwatch Off". Do not create another shortcut, toggle Color Filters, change the Focus, or add other actions.
+```
+
+Review the generated trigger and action against the table below, then save. These prompts still need a device check; a generated action alone does not establish that the Focus trigger was created. If the builder only creates the action or is unavailable, set the trigger manually in **Shortcuts → Automation → +**, selecting Nightwatch in the Focus triggers.
 
 | Trigger | Execution | Action |
 | --- | --- | --- |

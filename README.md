@@ -142,8 +142,8 @@ Use the built-in **Focus** control and select Nightwatch. This runs the paired a
 
 | Nightwatch in Control Center |
 | --- |
-| <img src="docs/assets/nightwatch-control-center.jpg" alt="Control Center Focus list with Nightwatch marked On" width="280"> |
-| Select Nightwatch in the Focus list. This capture shows the Focus marked On; it does not show the physical red tint.[^screenshots] |
+| <img src="docs/assets/nightwatch-control-center-red.png" alt="Illustrative red-tinted Control Center Focus list with Nightwatch marked On" width="280"> |
+| Select Nightwatch in the Focus list. Red tint added to illustrate the physical display effect; [original screenshot](docs/assets/nightwatch-control-center.jpg).[^screenshots] |
 
 For a filter-only override, edit Control Center, choose **Add a Control → Shortcut**, then configure it to run **Nightwatch Toggle**. You can choose Nightwatch Off instead if you want a dedicated return-to-regular-colors control. [Apple's Shortcut control instructions](https://support.apple.com/guide/shortcuts/apd06a9201d4/ios).
 

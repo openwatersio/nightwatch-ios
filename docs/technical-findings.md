@@ -9,7 +9,7 @@ Evidence here comes from the local source, recorded device observations, and lin
 | Capability | Evidence and limit | Consequence |
 | --- | --- | --- |
 | Toggle the saved Color Filter | Observed on iPad; the initial selection was grayscale | Configure Color Tint separately in Settings |
-| Set the filter explicitly On or Off | Shortcuts action recipe; the full Focus On/Off cycle still needs device verification | Use explicit states in automations, not Toggle |
+| Set the filter explicitly On or Off | Project owner reported a successful Focus On/Off cycle on iPhone; locked and scheduled execution remain unchecked | Use explicit states in automations, not Toggle |
 | Set hue, intensity, or filter type from Shortcuts | The tested action exposed only enable/disable/toggle | A generated description cannot add parameters the action lacks |
 | Read grayscale | UIKit API and positive device observation | Useful during setup, not a red-state sensor |
 | Read red tint or its intensity | No reliable app path established in the spike | Keep live state unknown |

@@ -10,7 +10,7 @@ The intended result:
 | Nightwatch Focus turns off | Color Filters turns off |
 | You run the optional Nightwatch Toggle shortcut | Color Filters switches state without changing Focus |
 
-The manual Focus-triggered toggle has worked in device testing. The separate On and Off automation recipe below still needs a complete device test, especially the Off path. See [findings and remaining checks](docs/findings.md).
+The project owner confirmed that the separate On and Off shortcuts and Focus automations work on their iPhone. Locked execution, scheduled exit, and switching to another Focus still need separate checks. See [findings and remaining checks](docs/findings.md).
 
 ## Project documentation
 
@@ -52,6 +52,11 @@ Inspect each generated shortcut against this table. If the builder is unavailabl
 | Nightwatch Off | Turn Color Filters Off |
 | Nightwatch Toggle, optional | Toggle Color Filters |
 
+| Saved shortcuts |
+| --- |
+| <img src="docs/assets/nightwatch-shortcuts.jpg" alt="Shortcuts library showing Nightwatch On, Nightwatch Off, and two automation-related shortcuts" width="280"> |
+| Nightwatch On and Nightwatch Off are the two filter shortcuts. This working setup also shows entries named Nightwatch Focus Automation and Nightwatch Off Automation; the Focus triggers are checked separately below. |
+
 Run Nightwatch On. A device with the default filter may become grayscale. That shows the action is working; the next step changes the saved filter to red. If you already have a different filter selected, that filter will appear instead.
 
 ## 2. Save the red tint
@@ -73,9 +78,14 @@ The shortcut only changes whether Color Filters is enabled. Hue, intensity, and 
 
 ## 3. Create Nightwatch Focus
 
-Open **Settings → Focus → + → Custom**. Name it **Nightwatch**, choose a red icon color and an icon you recognize, then finish creating it. Review People and Apps so its notification rules suit you.
+Open **Settings → Focus → + → Custom**. Name it **Nightwatch**, choose the red icon color and sunset glyph shown below, then finish creating it. Review People and Apps so its notification rules suit you.
 
 Focus will be the everyday control for the tint, your chosen screens, and your schedule. [Apple's Focus setup guide](https://support.apple.com/guide/iphone/iphd6288a67f/ios).
+
+| Name and icon | Focus settings |
+| --- | --- |
+| <img src="docs/assets/nightwatch-focus-create.jpg" alt="Custom Focus creation with Nightwatch, red icon color, and sunset glyph selected" width="280"> | <img src="docs/assets/nightwatch-focus-settings.jpg" alt="Nightwatch Focus settings showing notifications and Customize Screens" width="280"> |
+| Name the Focus Nightwatch and select the red sunset icon. | Review People and Apps, then scroll to Customize Screens. The notification choices shown are personal preferences, not requirements for the tint. |
 
 ## 4. Connect Focus to the shortcuts
 
@@ -95,7 +105,7 @@ Create a personal automation for the existing Focus named "Nightwatch". Trigger 
 Create a personal automation for the existing Focus named "Nightwatch". Trigger it only When Turning Off, not When Turning On. Set it to Run Immediately without asking for confirmation. Add one Run Shortcut action that runs my existing shortcut named exactly "Nightwatch Off". Do not create another shortcut, toggle Color Filters, change the Focus, or add other actions.
 ```
 
-Review the generated trigger and action against the table below, then save. These prompts still need a device check; a generated action alone does not establish that the Focus trigger was created. If the builder only creates the action or is unavailable, set the trigger manually in **Shortcuts → Automation → +**, selecting Nightwatch in the Focus triggers.
+Review the generated trigger and action against the table below, then save. The project owner reported success with these prompts. Check that both entries appear in Automation; a generated action alone does not establish that the Focus trigger was created. If the builder only creates the action or is unavailable, set the trigger manually in **Shortcuts → Automation → +**, selecting Nightwatch in the Focus triggers.
 
 | Trigger | Execution | Action |
 | --- | --- | --- |
@@ -107,6 +117,11 @@ For each automation, choose the saved shortcut if the next screen offers it dire
 Disable any existing Nightwatch automation that toggles Color Filters. It would compete with this pair. Check that the On automation does not also have When Turning Off selected, and vice versa.
 
 The actions set an explicit state: running On twice keeps the filter on, and running Off twice keeps it off. Apple documents both [Focus triggers](https://support.apple.com/guide/shortcuts/apde31e9638b/ios) and [automatic execution](https://support.apple.com/guide/shortcuts/apd602971e63/ios).
+
+| Both Focus automations enabled |
+| --- |
+| <img src="docs/assets/nightwatch-focus-automations.jpg" alt="Enabled personal automations for Nightwatch turning on and turning off" width="280"> |
+| One entry runs when Nightwatch turns on; the other runs when it turns off. Both switches should be enabled. Open each entry to check its action against the table above. |
 
 ### Test both directions
 
@@ -124,6 +139,11 @@ If Off fails, run Nightwatch Off manually to distinguish a shortcut problem from
 ### Control Center
 
 Use the built-in **Focus** control and select Nightwatch. This runs the paired automations and keeps the Focus and tint aligned.
+
+| Nightwatch in Control Center |
+| --- |
+| <img src="docs/assets/nightwatch-control-center.jpg" alt="Control Center Focus list with Nightwatch marked On" width="280"> |
+| Select Nightwatch in the Focus list. This capture shows the Focus marked On; it does not show the physical red tint.[^screenshots] |
 
 For a filter-only override, edit Control Center, choose **Add a Control → Shortcut**, then configure it to run **Nightwatch Toggle**. You can choose Nightwatch Off instead if you want a dedicated return-to-regular-colors control. [Apple's Shortcut control instructions](https://support.apple.com/guide/shortcuts/apd06a9201d4/ios).
 

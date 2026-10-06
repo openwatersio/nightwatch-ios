@@ -6,7 +6,7 @@ For implementation details, see [Technical findings and API limits](technical-fi
 
 ## Device observations
 
-- A custom Nightwatch Focus and a manually created Focus-triggered Color Filters toggle worked for the project owner. The Off automation was not yet created at the time of that report.
+- The project owner confirmed that the separate Nightwatch On and Nightwatch Off shortcuts and Focus automations work on their iPhone after using the copyable prompts. Supplied screenshots show both shortcuts, both enabled Focus automation entries, and Nightwatch active in Control Center. The captures do not reveal the action bodies or establish locked or scheduled execution.
 - The Set Color Filters shortcut action toggled the existing selection. It did not configure red hue or intensity. Grayscale was the initial selection during testing.
 - Color Tint could be configured manually in Settings and then toggled with a shortcut.
 - The iPad's description-based shortcut builder worked. The simulator remained on a preparation screen. Generated actions still need inspection.
@@ -26,7 +26,8 @@ Red at maximum Color Tint intensity is a provisional setup target. We have not e
 
 ## Before publishing install links or a website
 
-- [ ] Verify separate On and Off shortcuts and Focus automations on a physical iPhone, including locked execution and switching to a different Focus.
+- [x] Separate On and Off shortcuts and Focus automations work on the project owner's iPhone, as reported by the owner.
+- [ ] Verify locked execution and switching from Nightwatch to a different Focus.
 - [ ] Verify the scheduled end time restores regular colors.
 - [ ] Verify Control Center and Lock Screen controls, including any unlock requirement.
 - [ ] Verify Focus-linked Lock Screen and Apple Watch face behavior, including cross-device Focus settings.

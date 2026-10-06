@@ -24,6 +24,13 @@ If Nightwatch On and Nightwatch Off already exist, skip to [saving the red tint]
 
 In Shortcuts, open the description-based builder and paste each block separately. Keep these exact names so the automations can reference them.
 
+After copying a prompt, tap **Describe a shortcut** to bring up the keyboard. Tap the copied-text suggestion labeled **Paste from Safari** directly above the keys, highlighted below. If that suggestion is absent, touch and hold the input field and choose Paste.
+
+| Paste the copied instructions |
+| --- |
+| <img src="docs/assets/shortcut-paste-highlight.png" alt="Shortcuts builder with the Paste from Safari clipboard suggestion above the keyboard outlined in orange" width="320"> |
+| Tap the highlighted strip to paste your copied prompt. Highlight added for guidance; [original screenshot](docs/assets/shortcut-paste-original.jpg). |
+
 ### Nightwatch On
 
 ```text

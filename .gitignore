@@ -1,0 +1,11 @@
+# Local app experiment; the repository contains setup instructions only.
+.superpowers/
+.worktrees/
+build/
+Sources/
+Tests/
+Resources/
+Nightwatch.xcodeproj/
+Info.plist
+project.yml
+.DS_Store

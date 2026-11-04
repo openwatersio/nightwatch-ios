@@ -37,17 +37,17 @@ The [ideal app experience](ideal-app-experience.md) still depends on Shortcuts f
 
 DTS asked for two separate Feedback Assistant reports and will route them to the right engineering teams once we reply with the IDs.
 
-- [ ] Run NightwatchAccessibilityProbe on an iPhone and confirm the bug: red Color Tint on, begin the grayscale override, switch apps, check Color Filters.
-- [ ] Record the screen for those steps.
-- [ ] File the bug report: "Color Tint is not restored after an AXFeatureOverrideSession grayscale override ends." Attach the sample project, steps to reproduce, the expected result, the screen recording and a sysdiagnose.
-- [ ] File the enhancement request: "Allow apps to turn the user's Color Filters Color Tint on and off with consent." Ask for either a Color Tint option for `AXFeatureOverrideSession` that can stay on across apps, or a consent-gated switch for the user's existing Color Filters setting. In both cases the user sets the tint in Settings and the app only switches it on and off.
+- [x] Run NightwatchAccessibilityProbe on an iPhone and record the steps.
+- [x] File the bug report: "Color Tint is not restored after an AXFeatureOverrideSession grayscale override ends."
+- [x] File the enhancement request: "Allow apps to turn the user's Color Filters Color Tint on and off with consent." It asks for either a Color Tint option for `AXFeatureOverrideSession` that can stay on across apps, or a consent-gated switch for the user's existing Color Filters setting. In both cases the user sets the tint in Settings and the app only switches it on and off.
 - [ ] Reply to DTS on Case-ID 22642708 with both FB numbers.
-- [ ] Record the FB numbers here.
 
-| Report | Feedback ID | Status |
-| --- | --- | --- |
-| Bug: Color Tint not restored | Not filed | |
-| Enhancement: app control of Color Tint | Not filed | |
+| Report | Feedback ID |
+| --- | --- |
+| Bug: Color Tint not restored | FB25437254 |
+| Enhancement: app control of Color Tint | FB25437269 |
+
+Screenshots and screen recordings don't capture Color Filters, so a recording can't show the tint itself. It shows the Color Filters switch in Settings instead: on before the override, off after switching apps. Only a photo or video of the phone taken with another device shows the red.
 
 ## What would change the plan
 

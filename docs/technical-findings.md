@@ -16,6 +16,7 @@ Evidence here comes from the local source, recorded device observations, and lin
 | Inspect installed shortcuts silently | No reliable app path established | A helper can return names; it cannot prove action correctness |
 | Open Color Filters directly | Tested experimental links failed or landed on Apps | Copy the search term and explain Settings navigation |
 | Run a shortcut from the app | URL handoff and callbacks implemented; app switching observed | Expect Shortcuts to appear, rather than promising an inline toggle |
+| Turn Color Tint on or off from the app | Apple DTS confirmed no public API or entitlement; the grayscale override replaces the tint and ends when the app leaves the foreground | Keep the switch in Shortcuts |
 | Create the user's Focus and personal automations | No supported installation path established for this app | The user creates them in Apple's interfaces |
 | Run from Control Center or Lock Screen | Native Shortcut controls provide entry points | A custom app control would not itself grant Color Filters access |
 
@@ -122,12 +123,12 @@ An experimental completion panel used cyan text `(0, 0.55, 0.65)` on white, with
 
 Red at maximum intensity is provisional. Neither an optimal preset nor night-vision performance was measured. Screenshots did not include the applied red filter in our device observations; assess the display directly or photograph it.[^captures]
 
-## Direct API question sent to Apple
+## Apple's answer on direct API control
 
-Apple lists the Boolean entitlement [`com.apple.developer.accessibility.merchant-api-control`](https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.accessibility.merchant-api-control), named Merchant Accessibility API Control. Its existence does not establish that a general-purpose Nightwatch app qualifies or can configure Color Tint persistently.
+Apple Developer Technical Support confirmed that no public API or entitlement lets an app turn Color Filters or Color Tint on or off, even with the user's consent. [`AXFeatureOverrideSessionManager`](https://developer.apple.com/documentation/accessibility/axfeatureoverridesessionmanager) can override only grayscale, invert colors, Voice Control, VoiceOver and zoom. Its grayscale option replaces the user's Color Tint rather than turning it on, and it lasts only while the app is in the foreground.
 
-A code-level support request and zipped focused project were sent. The optional entitled scheme required a provisioning profile granting that entitlement; we had not obtained or tested it. No resolving Apple reply is recorded in this repository. Do not describe the entitlement route as approved, denied, or validated.
+The override requires the [`com.apple.developer.accessibility.merchant-api-control`](https://developer.apple.com/documentation/bundleresources/entitlements/com.apple.developer.accessibility.merchant-api-control) entitlement. DTS could not say whether it would be granted for an app like Nightwatch. Even if it were, the override couldn't produce a red tint.
 
-The questions to resolve are whether an App Store app of this kind may use the relevant APIs, whether they can configure red hue and intensity as well as enablement, whether changes persist outside the app and on the Lock Screen, and whether a supported API can read the resulting state. Until those questions have evidence, the instructions-only approach remains the deliverable.
+DTS also confirmed that the user's Color Tint isn't restored when the override ends. The instructions-only approach remains the deliverable. [Apple's answer on app control of Color Tint](apple-color-tint-api.md) has the full answer and the Feedback Assistant follow-up.
 
 [^captures]: Screenshots can document control locations and app layout. They cannot establish the physical filtered appearance observed in these tests.

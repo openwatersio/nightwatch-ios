@@ -14,7 +14,8 @@ The project owner confirmed that the separate On and Off shortcuts and Focus aut
 
 ## Project documentation
 
-- [Technical findings and API limits](docs/technical-findings.md): device evidence, reusable code patterns, and unresolved questions for Apple.
+- [Technical findings and API limits](docs/technical-findings.md): device evidence and reusable code patterns.
+- [Apple's answer on app control of Color Tint](docs/apple-color-tint-api.md): what Apple said, what it means for Nightwatch, and the Feedback Assistant follow-up.
 - [The ideal Nightwatch app](docs/ideal-app-experience.md): the intended paid app, setup, everyday controls, and repair experience.
 - [Findings and remaining checks](docs/findings.md): verification still needed for the instructions.
 

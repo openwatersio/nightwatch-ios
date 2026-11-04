@@ -16,7 +16,7 @@ For implementation details, see [Technical findings and API limits](technical-fi
 - White text on a bright red button became unreadable under the physical red filter. Help content should use a dark background and strong light/dark contrast.
 - The experimental hidden-text completion pattern has not been validated. It is not a setup requirement.
 
-Apple has received a support request about direct accessibility API control, including the entitlement question. No response resolving that question is recorded here. The guide does not depend on that outcome.
+Apple confirmed that no public API or entitlement lets an app turn Color Tint on or off, so Shortcuts stays the switch. [Apple's answer on app control of Color Tint](apple-color-tint-api.md) has the details and the Feedback Assistant reports still to file.
 
 ## What the guide must not promise
 

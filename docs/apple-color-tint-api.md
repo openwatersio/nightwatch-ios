@@ -40,7 +40,7 @@ DTS asked for two separate Feedback Assistant reports and will route them to the
 - [x] Run NightwatchAccessibilityProbe on an iPhone and record the steps.
 - [x] File the bug report: "Color Tint is not restored after an AXFeatureOverrideSession grayscale override ends."
 - [x] File the enhancement request: "Allow apps to turn the user's Color Filters Color Tint on and off with consent." It asks for either a Color Tint option for `AXFeatureOverrideSession` that can stay on across apps, or a consent-gated switch for the user's existing Color Filters setting. In both cases the user sets the tint in Settings and the app only switches it on and off.
-- [ ] Reply to DTS on Case-ID 22642708 with both FB numbers.
+- [x] Reply to DTS on Case-ID 22642708 with both FB numbers.
 
 | Report | Feedback ID |
 | --- | --- |

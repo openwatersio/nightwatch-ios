@@ -28,6 +28,11 @@ The project owner confirmed that the separate On and Off shortcuts and Focus aut
 3. Turn Reduce White Point off after configuring its strength. The On shortcut will enable the saved setting automatically. If you normally keep it enabled, leave it on and customize Nightwatch Off as described below.
 4. Add **Reduce White Point** under **Settings → Accessibility → Accessibility Shortcut** so you can triple-click the side or Home button to recover if the screen is too dim. If several features are selected, choose Reduce White Point from the menu.
 
+| Find Reduce White Point |
+| --- |
+| <img src="docs/assets/reduce-white-point-settings.jpg" alt="iPhone Display & Text Size settings with Reduce White Point off and Auto-Brightness on" width="320"> |
+| Turn on Reduce White Point to reveal its strength slider. Start at 80%; try 100% after checking readability. Leave Auto-Brightness on as shown. |
+
 Nightwatch leaves brightness and Auto-Brightness unchanged. Its dimming control is [Reduce White Point](https://support.apple.com/guide/iphone/iph3e2e1fb0/ios), which reduces bright-color intensity. There is no brightness percentage to choose, saved state file, or file permission to configure.
 
 80% is an adjustable starting suggestion, not an Apple recommendation or a tested night-vision threshold. The project owner found 80% already selected on their phone and observed substantially more dimming at 100%. A [hands-on setup guide](https://www.idownloadblog.com/2024/07/26/reduce-white-point-automation-iphone/) also reports 80% as its default. Neither observation establishes a universal default or optimum. The [National Park Service explains that even a small bright light can impair dark adaptation](https://www.nps.gov/subjects/nightskies/how-light-works.htm); red tint alone does not establish that the display is dim enough.

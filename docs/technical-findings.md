@@ -11,6 +11,7 @@ Evidence here comes from the local source, recorded device observations, and lin
 | Toggle the saved Color Filter | Observed on iPad; the initial selection was grayscale | Configure Color Tint separately in Settings |
 | Set the filter explicitly On or Off | Project owner reported a successful Focus On/Off cycle on iPhone; locked and scheduled execution remain unchecked | Use explicit states in automations, not Toggle |
 | Set hue, intensity, or filter type from Shortcuts | The tested action exposed only enable/disable/toggle | A generated description cannot add parameters the action lacks |
+| Enable or disable Reduce White Point | Set White Point exposes On/Off/Toggle, with no state output or strength parameter in the action reference | Configure strength in Settings; use an explicit exit preference, not a claimed live-state restore |
 | Read grayscale | UIKit API and positive device observation | Useful during setup, not a red-state sensor |
 | Read red tint or its intensity | No reliable app path established in the spike | Keep live state unknown |
 | Inspect installed shortcuts silently | No reliable app path established | A helper can return names; it cannot prove action correctness |
@@ -110,6 +111,10 @@ For a future app, checking on every opening remains a UX goal. The supported che
 ## Focus, scheduling, and state drift
 
 A personal automation watches a Focus transition; an ordinary shortcut does not remain running as a listener. The intended pairing is Nightwatch Focus on → Nightwatch On, and Nightwatch Focus off → Nightwatch Off. Apple's [Focus triggers](https://support.apple.com/guide/shortcuts/apde31e9638b/ios) support both transitions.
+
+The guide uses two actions in each shortcut. On enables Reduce White Point at its saved Settings strength, then enables Color Filters. Off disables Color Filters, then disables Reduce White Point. Daily Reduce White Point users can configure Off to turn White Point on instead. The shortcuts leave brightness and Auto-Brightness unchanged and use no saved state file.
+
+The [Set White Point action reference](https://matthewcassinelli.com/actions/set-white-point/) lists On/Off/Toggle, passes input through as output, and exposes no strength parameter. Its output must not be treated as the previous state. We found no supported built-in getter for Reduce White Point state or intensity, so automatic capture and exact restoration are not established. Off applies an explicit configured state, not a live-state restore. The suggested 80% reduction is configured manually in Settings; 100% is an option after checking readability. Strength remains there after exit, and separate day/night strengths cannot be restored by these recipes. No optimal night-vision strength has been established. Locked and scheduled execution and recovery require device verification.
 
 Explicit On and Off actions are repeatable without reversing the desired state. A Toggle shortcut remains useful as a manual override, but then Focus and filter state can disagree until another transition. A saved last-command value cannot detect changes made through Settings, another shortcut, or another control.
 

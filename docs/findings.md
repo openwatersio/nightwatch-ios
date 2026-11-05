@@ -1,6 +1,6 @@
 # Findings and remaining checks
 
-Nightwatch is an instructions-only project. Its deliverable is a repeatable setup using Color Filters, Shortcuts, and Focus. A website can present this guide once the full setup is verified. No app purchase, app installation, or subscription is required by this guide.
+Nightwatch is an instructions-only project. Its deliverable is a repeatable setup using Reduce White Point, Color Filters, Shortcuts, and Focus. A website can present this guide once the full setup is verified. No app purchase, app installation, or subscription is required by this guide.
 
 For implementation details, see [Technical findings and API limits](technical-findings.md). The [ideal app experience](ideal-app-experience.md) preserves the product intent.
 
@@ -22,13 +22,18 @@ Apple confirmed that no public API or entitlement lets an app turn Color Tint on
 
 A shared shortcut does not package the user's custom Focus, personal automation triggers, saved Color Tint, or screen assignments into one installation. The guide walks through those settings explicitly. A successful shortcut run is not proof that red hue and intensity are correct.
 
-Red at maximum Color Tint intensity is a provisional setup target. We have not established an optimal tint or measured its effect on night vision.
+Nightwatch On enables Reduce White Point at the saved Settings strength, then Color Filters. Off disables both; daily Reduce White Point users can customize Off to leave it on. No supported built-in getter for Reduce White Point state or strength was found, so Off applies an explicit state rather than restoring a captured one. Strength remains unchanged in Settings. The guide suggests starting at 80% reduction, with 100% as an option after checking readability. Neither strength is a validated night-vision threshold. The shortcuts leave brightness and Auto-Brightness unchanged and require no saved state file.
+
+The project owner found Reduce White Point already set to 80% on their phone, without recalling a prior adjustment, and observed substantially more dimming at 100%. This confirms one device's setting and the owner's visual impression, not a universal default, a measurement of light output, or a test of the Focus automation.
 
 ## Before publishing install links or a website
 
+- [ ] Verify Reduce White Point On/Off through manual shortcuts and Focus transitions, including repeated runs and the daily-use Off customization.
+- [ ] Check readability with red tint at 80% and 100% reduction, saved strength retention, and recovery through the Accessibility Shortcut.
+- [ ] Confirm neither shortcut changes brightness or Auto-Brightness configuration.
 - [x] Separate On and Off shortcuts and Focus automations work on the project owner's iPhone, as reported by the owner.
 - [ ] Verify locked execution and switching from Nightwatch to a different Focus.
-- [ ] Verify the scheduled end time restores regular colors.
+- [ ] Verify the scheduled end time restores regular colors and applies the configured Reduce White Point exit state.
 - [ ] Verify Control Center and Lock Screen controls, including any unlock requirement.
 - [ ] Verify Focus-linked Lock Screen and Apple Watch face behavior, including cross-device Focus settings.
 - [ ] Export and test shared shortcut links on a device without the shortcuts installed. Keep the manual action recipes available for repair.

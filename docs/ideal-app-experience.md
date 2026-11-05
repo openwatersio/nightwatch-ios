@@ -10,7 +10,7 @@ The aim is to make nighttime use less disruptive to night vision. We still need 
 
 ## What someone is paying for
 
-The value is a coherent setup: a chosen red preset, a dependable switch back to regular colors, familiar system controls, optional scheduling, and help when something breaks. The person should not have to understand accessibility APIs or design a set of automations to get that result.
+The value is a coherent setup: Reduce White Point at a configured strength, a chosen red preset, a dependable switch back to regular colors and the configured Reduce White Point exit state, familiar system controls, optional scheduling, and help when something breaks. The person should not have to understand accessibility APIs or design a set of automations to get that result.
 
 The intended price is $5.99 once, with no subscription. This price belongs to the app concept; the instructions repository does not require a purchase. A wrapper that mostly sends people elsewhere to configure everything does not yet deliver the experience we wanted to charge for.
 
@@ -24,7 +24,7 @@ Creating a Focus automatically was an early entry-point idea. It is not a requir
 
 ### The Shortcuts-based setup we explored
 
-1. Create the shortcut first. One button copies the prepared description and opens Shortcuts; the person pastes it into the builder where available. A manual single-action recipe is always available.
+1. Create the shortcut first. One button copies the prepared description and opens Shortcuts; the person pastes it into the builder where available. Manual action recipes are always available. Configure Reduce White Point strength in Settings, starting at 80%, with 100% available after checking readability. On enables the reduction and tint; Off disables both, with a customization for daily Reduce White Point users. Brightness and Auto-Brightness remain unchanged. The current recipes cannot read the previous Reduce White Point state or preserve separate day/night strengths.
 2. Run it. On a device using the default filter, grayscale is useful evidence that filtering is active. An existing red configuration must also be allowed. A successful callback is evidence of execution, not proof of correct contents.
 3. Configure Color Tint. Copy “Color Filters” and open Settings, with search instructions. Show a tight reference image of Color Tint, then explain scrolling to Hue and Intensity. Tell the person to set red and maximum intensity as the provisional preset.
 4. Return and continue. Expect multiple trips because the tint may be wrong or intensity may be incomplete. Keep progress and the relevant visual guidance available.
@@ -50,7 +50,7 @@ The intended package includes a manual control, reliable automatic entry and exi
 | Control Center | Reach Nightwatch without opening the app | Use Focus, or a native Shortcut control for a filter-only override |
 | Lock Screen | Activate or leave Nightwatch from a familiar control | Configure the native control and verify any unlock requirement |
 | Time schedule | Enter at the chosen time and leave at the end time | Schedule Nightwatch Focus and use separate On/Off automations |
-| Focus | Coordinate tint, notification preferences, and chosen screens | User creates Nightwatch Focus and its personal automations |
+| Focus | Coordinate white-point reduction, tint, notification preferences, and chosen screens | User creates Nightwatch Focus and its personal automations |
 | Watch face | A dark face with red details when Nightwatch is active | Link a face to Focus; this does not apply the phone's filter to the Watch |
 
 Separate On and Off actions are essential for automation. Repeating On should keep Nightwatch on. A manual Toggle is an optional override, and the interface must explain that it can make the tint disagree with Focus until the next transition.

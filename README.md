@@ -226,4 +226,8 @@ If you share Focus across devices, configure and test the filter and automations
 
 Judge the tint on the display itself. Our device screenshots did not capture the red filter; a photograph of the screen did.[^screenshots]
 
+## License
+
+The guide and docs are © Open Water Software, LLC and [CC BY 4.0](LICENSE). Screenshots show Apple's software, which stays Apple's.
+
 [^screenshots]: The settings image above documents where the controls are. It does not show the filtered appearance seen by the person holding the device.
